@@ -14,9 +14,9 @@ class Header extends Component {
   renderLogoutLink() {
     return (
       <div className="navbar-right">
-        <span>
+        <div className="un-nav">
           {this.context.user.name}
-        </span>
+        </div>
         <nav>
           <Link
             onClick={this.handleLogoutClick}

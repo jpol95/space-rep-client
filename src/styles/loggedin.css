@@ -30,7 +30,7 @@ input {
     justify-content: center;
 }
 
-.logo {
+/* .logo {
     font-family: 'Architects Daughter', cursive;
     font-size: 35px;
     margin: auto;
@@ -41,7 +41,7 @@ input {
     margin-bottom: 50px;
     border: 1px solid rgb(173, 165, 165);
     border-radius: 5px;
-}
+} */
 
 .add-button {
     border-radius: 50%;
@@ -89,5 +89,9 @@ h1 {
     left: 0px;
     width: 5em;
     height: 2em;
+}
+
+.single-word {
+    display: flex;
 }
 

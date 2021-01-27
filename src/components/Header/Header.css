@@ -22,11 +22,16 @@ header {
     height: 100%;
     display: flex;
     align-items: center;
-    margin-right: 30px;
+    padding: 0px 20px;
     font-size: 20px;
     font-family: 'Roboto'
 }
 
 .navbar-right {
     display: flex;
+}
+
+.navbar-right a:hover {
+    background-color: rgb(4, 138, 4);
+    color: white;
 }

@@ -1,0 +1,86 @@
+html,
+body {
+  height: 100%;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background-image: url("background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.darker {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.login {
+  width: 45%;
+  font-size: 35px;
+  background-color: white;
+  text-align: center;
+  border-radius: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-input {
+  display: block;
+  margin: auto;
+  height: 2em;
+  width: 60%;
+  margin-bottom: 20px;
+  /* border-radius: 10px; */
+  border: 2px solid black;
+}
+
+main {
+  padding: 10% 30% 10% 30%;
+  font-family: "Roboto", sans-serif;
+}
+
+.password-label,
+.un-label,
+.confirm-password-label {
+  font-size: 20px;
+}
+
+.submit {
+  background-color: green;
+  display: block;
+  margin: auto;
+  border: none;
+  padding: 10px 40px 10px 40px;
+  color: white;
+  cursor: pointer;
+}
+.submit:hover {
+  background-color: rgb(87, 209, 87);
+}
+
+.login-label {
+  font-weight: 500;
+  /* margin-top: 20px; */
+}

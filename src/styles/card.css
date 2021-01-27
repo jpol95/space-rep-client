@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@500&display=swap');
+
+html, body {
+    margin: 0px;
+    background-color: rgb(243,243,243);
+    height: 100%;
+}
+
+.card{
+    background-color: white;
+    border: 1px solid grey;
+    height: 50%;
+    width: 50%;
+    margin: auto;
+  }
+
+  .score {
+      text-align: center;
+      font-family: 'Architects Daughter', cursive;
+      font-size: 35px;
+  }
+
+  .tally {
+      color: green;
+  }
+
+  .card {
+      position: relative;
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      font-size: 4em;
+      font-family: 'Noto Sans SC'
+  }
+
+  .record {
+    position: absolute;
+    font-size: 30px;
+    top: 5px;
+    left: 10px;
+
+  }
+
+.right, .wrong {
+    display: inline-block;
+    font-family: 'Architects Daughter';
+    font-weight: 1000;
+}
+
+.right {
+    color: rgb(3, 190, 3);
+}
+
+.wrong {
+    color: rgb(255, 0, 0)
+}
+
+  .next-button {
+    background-color: rgb(0, 255, 0);
+    border: 1px solid grey;
+    padding: 10px 20px; 
+    font-size: 2em;
+    font-family: 'Architects Daughter';
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    cursor: pointer;
+  }
+
+  .next-button:hover {
+    background-color: rgb(140, 255, 140);
+  }
+
+  .answer-input {
+      width: 250px;
+      display: block;
+      margin: auto;
+      margin-top: 20px;
+  }

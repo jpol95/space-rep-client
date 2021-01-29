@@ -3,3 +3,4 @@ think about implementing deleting or editing or adding words
 for adding you should make it so another word just appears on the page
 gonna figure out how to do the leanr page next, then think about how you want to display the users score on the dashboard
 shrink text--> part of making app responsive
+use classnames package

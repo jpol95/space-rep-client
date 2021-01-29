@@ -16,11 +16,11 @@ function Front(props) {
 
 function Back(props) {
   return (
-    <div class="card back-card">
+    <div class="card-answer back-card">
       <div class="record">
         <div class="right">{props.wordCorrectCount}</div>/<div class="wrong">{props.wordIncorrectCount}</div>
       </div>
-      <div class="correct">{props.isCorrect ? `&#10004; Correct` : `&#10006; Incorrect`} </div>
+      {props.isCorrect ? <div class="correct"> \&#10004; Correct</div> : <div class="incorrect"> &#10006; Incorrect</div>}
       <div class="feedback">
         Your Answer <div class="correct-answer">this</div> The Correct Answer{" "}
         <div class="correct-answer">that</div>
@@ -28,6 +28,7 @@ function Back(props) {
     </div>
   );
 }
+//YOU NEED TO FINISH IMPLEMENTING FEEDBACK CARD AND THEN NEXT BUTTON. YOU HAVE STYLING NOW MAKE FETCH CALL AND FLIP ON FETCH CALL
 
 class LearningRoute extends Component {
   state = {
@@ -46,11 +47,11 @@ class LearningRoute extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    LanguageApiService.postGuess(this.state.guess).then((results) => {
-      this.setState({
-        back: results,
-      });
-    });
+    // LanguageApiService.postGuess(this.state.guess).then((results) => {
+    //   this.setState({
+    //     back: results,
+    //   });
+    // });
   }
 
   render() {

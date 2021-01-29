@@ -18,10 +18,13 @@ function Back(props) {
   return (
     <div class="card back-card">
       <div class="record">
-        <div class="right">{props.wordCorrectCount}</div>/
-        <div class="wrong">{props.wordIncorrectCount}</div>
+        <div class="right">{props.wordCorrectCount}</div>/<div class="wrong">{props.wordIncorrectCount}</div>
       </div>
-      <div class="word">{props.nextWord}</div>
+      <div class="correct">{props.isCorrect ? `&#10004; Correct` : `&#10006; Incorrect`} </div>
+      <div class="feedback">
+        Your Answer <div class="correct-answer">this</div> The Correct Answer{" "}
+        <div class="correct-answer">that</div>
+      </div>
     </div>
   );
 }

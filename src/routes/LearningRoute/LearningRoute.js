@@ -15,6 +15,7 @@ function Front(props) {
 }
 
 function Back(props) {
+  console.log(props)
   return (
     <div class="card-answer back-card">
       <div class="record">
@@ -22,12 +23,12 @@ function Back(props) {
         <div class="wrong">{props.wordIncorrectCount}</div>
       </div>
       {props.isCorrect ? (
-        <div class="correct"> \&#10004; Correct</div>
+        <div class="correct"> &#10004; Correct</div>
       ) : (
         <div class="incorrect"> &#10006; Incorrect</div>
       )}
       <div class="feedback">
-        Your Answer <div class="correct-answer">{props.guess}</div> The Correct
+        Your Answer <div class={props.isCorrect ? "correct-answer" : "incorrect-answer"}>{props.guess}</div> The Correct
         Answer <div class="correct-answer">{props.answer}</div>
       </div>
       <div class="original">Original Phrase: {props.nextWord}</div>
@@ -71,14 +72,15 @@ class LearningRoute extends Component {
       this.setState({
         front: { nextWord, wordCorrectCount, wordIncorrectCount },
         totalScore,
-        back: {}
+        guess: {value: "", touched:false}, 
+        flip: ""
       });
     });
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    LanguageApiService.postGuess(this.state.guess).then((results) => {
+    LanguageApiService.postGuess(this.state.guess.value).then((results) => {
       const {
         nextWord,
         wordCorrectCount,
@@ -110,10 +112,10 @@ class LearningRoute extends Component {
         <div className="flip">
           <div className={`flip-internal ${this.state.flip}`}>
             <Front {...this.state.front} totalScore={this.state.totalScore} />
-            <Back {...this.state.back} totalScore={this.state.totalScore} />
+            <Back {...this.state.back} totalScore={this.state.totalScore} guess={this.state.guess.value} />
           </div>
         </div>
-       {!Object.keys(this.state.back).length && <form onSubmit={this.handleSubmit} class="answer-input">
+       { !this.state.flip && <form onSubmit={this.handleSubmit} class="answer-input">
           {this.state.guess.touched && this.invalidInput()}
           <label className="answer-label" for="answer">
             Answer:
@@ -123,7 +125,7 @@ class LearningRoute extends Component {
             {"Check"}
           </button>
         </form>}
-       { !!Object.keys(this.state.back).length && <button onClick={this.getNext()} type="submit" class="next-button">
+       { !!this.state.flip && <button onClick={this.getNext} type="submit" class="next-button">
             {"Next"}
           </button>}
       </section>
@@ -132,3 +134,6 @@ class LearningRoute extends Component {
 }
 
 export default LearningRoute;
+
+
+//FIND WAY TO MAKE INFO NTO DISSAPPEAR BEFORE FLIP

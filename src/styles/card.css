@@ -141,7 +141,7 @@ body {
   position: relative;
 }
 
-.flip:hover .flip-internal {
+.activate {
   transform: rotateX(180deg);
 }
 
@@ -157,4 +157,20 @@ body {
 
 .correct {
   display: block;
+}
+
+
+.original {
+  position: absolute;
+  top: 90%;
+}
+
+
+.error {
+  color: red;
+}
+
+.next-button:disabled{
+  background-color: white;
+  cursor: default;
 }

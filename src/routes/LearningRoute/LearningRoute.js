@@ -35,7 +35,7 @@ function Back(props) {
     </div>
   );
 }
-//YOU NEED TO FINISH IMPLEMENTING FEEDBACK CARD AND THEN NEXT BUTTON. YOU HAVE STYLING NOW MAKE FETCH CALL AND FLIP ON FETCH CALL
+
 
 class LearningRoute extends Component {
   state = {

@@ -15,12 +15,12 @@ function Front(props) {
 }
 
 function Back(props) {
-  console.log(props)
+  console.log(+props.isCorrect)
   return (
     <div class="card-answer back-card">
-      <div class="record">
-        <div class="right">{props.wordCorrectCount}</div>/
-        <div class="wrong">{props.wordIncorrectCount}</div>
+       <div class="record">
+        <div class="right">{props.wordCorrectCount + +props.isCorrect}</div>/
+        <div class="wrong">{props.wordIncorrectCount + +!props.isCorrect}</div>
       </div>
       {props.isCorrect ? (
         <div class="correct"> &#10004; Correct</div>
@@ -44,10 +44,22 @@ class LearningRoute extends Component {
     guess: { value: "", touched: false },
     back: {},
     flip: "",
+    next: {}
   };
 
   componentDidMount() {
-    this.getNext();
+    LanguageApiService.getHead().then((head) => {
+      const {
+        nextWord,
+        wordCorrectCount,
+        wordIncorrectCount,
+        totalScore,
+      } = head;
+      this.setState({
+        front: { nextWord, wordCorrectCount, wordIncorrectCount },
+        totalScore,
+      });
+    });
   }
 
   handleChangeInput = (e) => {
@@ -62,25 +74,15 @@ class LearningRoute extends Component {
 
 
   getNext = () => {
-    LanguageApiService.getHead().then((head) => {
-      const {
-        nextWord,
-        wordCorrectCount,
-        wordIncorrectCount,
-        totalScore,
-      } = head;
       this.setState({
-        front: { nextWord, wordCorrectCount, wordIncorrectCount },
-        totalScore,
         guess: {value: this.state.guess.value, touched:false}, 
         flip: ""
       });
-    });
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    LanguageApiService.postGuess(this.state.guess.value).then((results) => {
+    LanguageApiService.postGuess(this.state.guess.value).then(async (results) => {
       const {
         nextWord,
         wordCorrectCount,
@@ -92,18 +94,23 @@ class LearningRoute extends Component {
       this.setState({
         totalScore,
         back: {
-          wordCorrectCount,
-          wordIncorrectCount,
+          ...this.state.front,
           answer,
-          nextWord,
           isCorrect,
         },
         flip: "activate",
       });
+      await new Promise(r => setTimeout(r, 600))
+    this.setState({
+      front:  {nextWord,
+      wordCorrectCount,
+      wordIncorrectCount}
+    })
     });
   };
 
   render() {
+    console.log(this.state.back)
     return (
       <section className="learning">
         <div className="score">

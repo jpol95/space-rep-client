@@ -183,3 +183,28 @@ fieldset {
 .score h2 {
   font-size: 40px;
 }
+
+@media only screen and (max-width: 600px) {
+  .front, .back{
+    width: 100px;
+  }
+  .navbar-right a{
+    font-size: 15px;
+  }
+  .un-nav{
+    font-size: 15px;
+    padding-left: 50px;
+    text-align: center;
+  }
+  .logo {
+    font-size: 20px;
+    margin-left: 10px;
+  }
+.learning .word {
+  font-size: 30px;
+  text-align: center;
+}
+.flip {
+  width: 80%;
+}
+ }

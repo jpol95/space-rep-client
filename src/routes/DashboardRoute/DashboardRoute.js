@@ -38,7 +38,9 @@ class DashboardRoute extends Component {
         </div>
         <div className="wordlist">
           {this.state.wordList.map(Word)}
-          <Link to="/learn" className="learn-button">Start practicing</Link>
+        </div>
+        <div class="learn-link-section">
+        <Link to="/learn" className="learn-button">Start practicing</Link>
         </div>
       </section>
     );

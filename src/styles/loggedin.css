@@ -55,6 +55,13 @@ input {
     font-family: 'Architects Daughter';
 }
 
+/* FIX MOBILE VIEW OF CARDS */
+
+.learn-link-section {
+    display: flex;
+    justify-content: center;
+}
+
 .correct-display, .incorrect-display {
     font-family: 'Architects Daughter';
 }
@@ -119,3 +126,11 @@ h2 {
     margin-bottom: 4%;
     /* font-family: 'Noto Sans SC' */
 }
+
+@media only screen and (max-width: 600px) {
+    .wordlist {
+        align-items:flex-start;
+        justify-content: left;
+        padding: 0px 50px
+    }
+   }

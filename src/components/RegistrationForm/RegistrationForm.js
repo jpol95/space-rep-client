@@ -45,42 +45,44 @@ class RegistrationForm extends Component {
         onSubmit={this.handleSubmit}
         className="registration"
       >
+        <fieldset>
         <p className="registration-label">Sign up</p>
         <div role='alert'>
           {error && <p>{error}</p>}
         </div>
         <div>
-          <Label className="name-label" htmlFor='fullname'>
+          <Label className="name-label" htmlFor='registration-name-input'>
             Enter your name<Required />
           </Label>
           <Input
             className="registration-input"
             ref={this.firstInput}
-            id='fullname'
+            id='registration-name-input'
             name='name'
             required
           />
         </div>
         <div>
-          <Label className="un-label" htmlFor='username'>
-            Enter your username<Required />
+          <Label className="un-label" htmlFor='registration-username-input'>
+            Choose a username<Required />
           </Label>
           <Input
             className="registration-input"
             ref={this.firstInput}
-            id='username'
+            id='registration-username-input'
             name='username'
             required
           />
         </div>
         <div>
-          <Label className="password-label" htmlFor='password'>
-            Enter your password<Required />
+          <Label className="password-label" htmlFor='registration-password-input'>
+            Choose a password<Required />
           </Label>
           <Input
             className="registration-input"
-            id='password'
+            id='registration-password-input'
             name='password'
+            type='password'
             required
           />
         </div>
@@ -103,6 +105,7 @@ class RegistrationForm extends Component {
           {' '}
           <Link className="already-link" to='/login'>Already have an account?</Link>
         </footer>
+        </fieldset>
       </form>
     )
   }

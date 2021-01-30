@@ -48,28 +48,28 @@ class LoginForm extends Component {
         className='LoginForm login'
         onSubmit={this.handleSubmit}
       >
-        <p class="login-label">Login</p>
+        <h2 className="login-label">Login</h2>
         <div role='alert'>
           {error && <p>{error}</p>}
         </div>
         <div>
-          <Label className="un-label" htmlFor='username'>
+          <Label className="un-label" htmlFor='login-username-input'>
             Username
           </Label>
           <Input
             className="login-input"
             ref={this.firstInput}
-            id='username'
+            id='login-username-input'
             name='username'
             required
           />
        
-          <Label htmlFor='password' className="password-label">
+          <Label htmlFor='login-password-input' className="password-label">
             Password
           </Label>
           <Input
             className="login-input"
-            id='password'
+            id='login-password-input'
             name='password'
             type='password'
             required

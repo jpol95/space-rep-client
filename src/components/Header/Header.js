@@ -30,11 +30,11 @@ class Header extends Component {
 
   renderLoginLink() {
     return (
-      <div className="navbar-right">
+      <nav className="navbar-right">
         <Link to='/login'>Login</Link>
         {' '}
         <Link to='/register'>Sign up</Link>
-      </div>
+      </nav>
     )
   }
 
@@ -43,7 +43,7 @@ class Header extends Component {
       <header>
         <h1>
           <Link to='/' className="logo">
-            Lernen
+            Spaced repetition
           </Link>
         </h1>
         {TokenService.hasAuthToken()

@@ -175,3 +175,11 @@ body {
   background-color: white;
   cursor: default;
 }
+
+fieldset {
+  border: none;
+}
+
+.score h2 {
+  font-size: 40px;
+}

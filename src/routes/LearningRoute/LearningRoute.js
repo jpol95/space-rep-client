@@ -72,7 +72,7 @@ class LearningRoute extends Component {
       this.setState({
         front: { nextWord, wordCorrectCount, wordIncorrectCount },
         totalScore,
-        guess: {value: "", touched:false}, 
+        guess: {value: this.state.guess.value, touched:false}, 
         flip: ""
       });
     });
@@ -121,7 +121,7 @@ class LearningRoute extends Component {
             Answer:
           </label>
           <input onChange={this.handleChangeInput} id="answer" />
-          <button disabled = {!!this.invalidInput()} type="submit" class="next-button">
+          <button disabled = {!!this.invalidInput() || !this.state.guess.touched} type="submit" class="next-button">
             {"Check"}
           </button>
         </form>}

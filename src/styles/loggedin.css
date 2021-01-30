@@ -44,15 +44,28 @@ input {
     border-radius: 5px;
 } */
 
-.add-button {
-    border-radius: 50%;
-    height: 55px;
-    width: 55px;
+.learn-button {
     background-color: rgb(0, 255, 0);
     color: white;
     font-size: 40px;
+    padding: 5px 15px;
     border: 1px solid black;
-    cursor: pointer
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.correct-display, .incorrect-display {
+    font-family: 'Architects Daughter';
+}
+
+.correct-display {
+    color: green;
+    margin-right: 7px;
+    margin-left: 3px;
+}
+
+.incorrect-display {
+    color: red;
 }
 
 .edit-icon, .x-icon, .check-icon {
@@ -60,7 +73,7 @@ input {
     width: 17px; 
 }
 
-.add-button:hover {
+.learn-button:hover {
     background-color: rgb(140, 255, 140);
 }
 
@@ -98,4 +111,10 @@ h1 {
 .edit-icon, .x-icon, .check-icon {
     margin-top: 5px;
     margin-left: 5px;
+}
+
+.dashboard h1 {
+    font-size: 50px;
+    margin-bottom: 4%;
+    /* font-family: 'Noto Sans SC' */
 }

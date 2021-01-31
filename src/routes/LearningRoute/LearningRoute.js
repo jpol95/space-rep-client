@@ -18,12 +18,10 @@ function Back(props) {
   return (
     <div className="card-answer back-card">
       <div className="record">
-      &#10004;
-        <div className="right">{props.wordCorrectCount + +props.isCorrect}</div>
+        <div className="right"> &#10004; {props.wordCorrectCount + +props.isCorrect}</div>
         / 
         <div className="wrong">
-        &#10006;
-          {props.wordIncorrectCount + +!props.isCorrect}
+        &#10006; {props.wordIncorrectCount + +!props.isCorrect}
         </div>
       </div>
       {props.isCorrect ? (

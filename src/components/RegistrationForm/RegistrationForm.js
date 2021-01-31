@@ -48,7 +48,7 @@ class RegistrationForm extends Component {
         <fieldset>
         <p className="registration-label">Sign up</p>
         <div role='alert'>
-          {error && <p>{error}</p>}
+          {error && <p className="error">{error}</p>}
         </div>
         <div>
           <Label className="name-label" htmlFor='registration-name-input'>
@@ -82,18 +82,6 @@ class RegistrationForm extends Component {
             className="registration-input"
             id='registration-password-input'
             name='password'
-            type='password'
-            required
-          />
-        </div>
-        <div>
-          <Label className="confirm-password-label" htmlFor='confirm-password'>
-            Confirm your password<Required />
-          </Label>
-          <Input
-            className="registration-input"
-            id='confirm-password'
-            name='confirm-password'
             type='password'
             required
           />

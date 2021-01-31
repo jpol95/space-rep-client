@@ -6,7 +6,7 @@ function Front(props) {
   return (
     <div className="card front-card">
       <div className="record">
-        <div className="right">&#10004; {props.wordCorrectCount}</div>/
+        <div className="right">&#10004; {props.wordCorrectCount}</div>/ 
         <div className="wrong">&#10006; {props.wordIncorrectCount}</div>
       </div>
       <div className="word">{props.nextWord}</div>
@@ -18,9 +18,11 @@ function Back(props) {
   return (
     <div className="card-answer back-card">
       <div className="record">
+      &#10004;
         <div className="right">{props.wordCorrectCount + +props.isCorrect}</div>
-        /
+        / 
         <div className="wrong">
+        &#10006;
           {props.wordIncorrectCount + +!props.isCorrect}
         </div>
       </div>

@@ -50,7 +50,7 @@ class LoginForm extends Component {
       >
         <h2 className="login-label">Login</h2>
         <div role='alert'>
-          {error && <p>{error}</p>}
+          {error && <p className="error">{error}</p>}
         </div>
         <div>
           <Label className="un-label" htmlFor='login-username-input'>
